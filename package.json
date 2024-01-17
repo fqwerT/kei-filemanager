@@ -4,9 +4,7 @@
   "description": "This is a dummy app",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev:watch": "npx electronmon --trace-warnings ."
+    "electron-dev": "electron ."
   },
   "keywords": [
     "electron",
@@ -16,9 +14,11 @@
   "author": "Amitav Roy",
   "license": "MIT",
   "dependencies": {
+    "@types/react": "^18.2.48",
     "axios": "^1.2.3",
     "electron": "^22.0.0",
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "react-dropzone": "^14.2.3"
   },
   "electronmon": {
     "patterns": [

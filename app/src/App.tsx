@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Reader } from './components/converter/fileReader';
+
 
 function App() {
+
+  // const ipcRenderer = (window as any).ipcRenderer;
+  // const handleSubmit = () =>
+  // ipcRenderer.send('file:upload', { value: '123' });
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload. Amitav
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Reader/>
     </div>
-  );
+  )
 }
 
 export default App;
