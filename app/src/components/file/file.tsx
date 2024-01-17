@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-
+import './style.css';
 interface FileProps {
   name: string;
   path: string;
@@ -46,21 +46,25 @@ export const File: React.FC<FileProps> = ({
 
   return (
     <section className="file">
-      <p id="name">{name}</p> <p>{path}</p> <p>{size}</p>
-      <p>{type}</p>
-      <button onClick={() => handleDelete(path)}>delete</button>
-      <button onClick={() => changeName('status', null)}>rename</button>
-      {fileName.status && (
-        <section>
-          <input onChange={(e) => changeName('value', e.target.value)} />
-          <button
-            onClick={() => renameFile(path, fileName.newName)}
-            disabled={!fileName.newName}
-          >
-            ok
-          </button>
-        </section>
-      )}
+      <div>
+        <p>name: {name}</p> <p>path: {path}</p> <p>suze: {size}</p>
+        <p>type: {type}</p>
+        <div>
+          <button onClick={() => handleDelete(path)}>delete</button>
+          <button onClick={() => changeName('status', null)}>rename</button>
+        </div>
+        {fileName.status && (
+          <section>
+            <input onChange={(e) => changeName('value', e.target.value)} />
+            <button
+              onClick={() => renameFile(path, fileName.newName)}
+              disabled={!fileName.newName}
+            >
+              ok
+            </button>
+          </section>
+        )}
+      </div>
     </section>
   );
 };

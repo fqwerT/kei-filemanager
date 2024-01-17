@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reader } from './components/converter/fileReader';
-
+import './App.css'
 
 function App() {
 
@@ -10,9 +10,9 @@ function App() {
 
 
   return (
-    <div>
+
       <Reader/>
-    </div>
+
   )
 }
 

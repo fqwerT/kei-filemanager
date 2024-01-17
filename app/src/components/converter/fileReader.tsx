@@ -4,6 +4,7 @@ import { useCallback, useState, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { convert } from './utils';
 import { File } from '../file/file';
+import './style.css'
 export const Reader = () => {
   const [pickedFiles, setPickedFiles] = useState<null | any[]>('');
 
@@ -23,24 +24,24 @@ export const Reader = () => {
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
-  // const deleteFile = (filePath) => {
-  //   ipcRenderer.send("deleteFile", filePath);
-  // };
 
   // const addFile = (filePath, data) => {
   //   ipcRenderer.send("addFile", { filePath, data });
   // };
 
   return (
-    <>
-      <div {...getRootProps()}>
+
+      <div {...getRootProps()} className='dragndrop'>
+        <div className='dragndrop__header'>
         <input {...getInputProps()} />
         {isDragActive ? (
           <p>Drop the files here ...</p>
         ) : (
           <p>Drag 'n' drop some files here, or click to select files</p>
         )}
-      </div>
+        </div>
+
+      
 
       {adaptedData &&
         adaptedData.map((item, index) => (
@@ -53,6 +54,6 @@ export const Reader = () => {
             handleDelete={handleDelete}
           />
         ))}
-    </>
+    </div>
   );
 };
