@@ -1,17 +1,31 @@
-
 @font-face {
-    font-family: Roboto;
-    src: url('../../assets/fonts/Roboto-Regular.ttf');
+  font-family: Roboto;
+  src: url('../../assets/fonts/Roboto-Regular.ttf');
 }
 .file {
-    display: flex;
-    width:98%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
-    padding-bottom: 10px;
-    border-radius: 7px;
-    max-height: 100px;
+  display: flex;
+  max-width: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  padding-bottom: 10px;
+  border-radius: 7px;
+  max-height: 120px;
+  padding: 5px;
+  font-family: Roboto;
+  margin: 10px;
+}
 
-    font-family: Roboto;
-    margin: 10px;
-} 
+.file:hover {
+  background-color: rgba(0, 0, 0, 0.027);
+  transform: scale(1.1);
+  transition: 0.3s linear;
+  box-shadow: 5px 4px 5px -1px rgba(0, 0, 0, 0.46);
+  -webkit-box-shadow: 5px 4px 5px -1px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 5px 4px 5px -1px rgba(0, 0, 0, 0.46);
+}
 
+.file div p {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+}

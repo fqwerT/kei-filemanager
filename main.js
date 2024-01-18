@@ -59,14 +59,11 @@ ipcMain.on("renameFile", (event, { oldPath, newPath }) => {
 //   const data = await TodoService.handleTodoFormSubmit(opt);
 //   mainWindow.webContents.send('task:added', { task: data });
 // });
-// ipcMain.on('file:upload', async (e, opt) => {
-//   console.log(e,opt)
-//   // var form = new FormData();
-//   // form.append('image', fs.createReadStream(opt.file));
-//   // form.append('name', 'asdasd');
-//   // await axios.post('http://localhost:8000/api/upload', form, {
-//   //   headers: form.getHeaders(),
-//   // });
-//   // mainWindow.webContents.send('upload:complete');
-//   return true;
-// });
+ipcMain.on('addFile', async (e, opt) => {
+  fs.writeFile(opt.path, opt.content, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("The file was saved!");
+}); 
+});

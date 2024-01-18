@@ -1,24 +1,22 @@
 import { useState, useCallback } from 'react';
 import './style.css';
 interface FileProps {
-  name: string;
-  path: string;
-  type: string;
-  size: number | string;
+  item: {
+    name: string;
+    path: string;
+    type: string;
+    size: number | string;
+  };
   handleDelete: (path: string) => void;
+  show: any;
 }
 
 interface RenameProps {
   status: boolean;
   newName: null | string;
 }
-export const File: React.FC<FileProps> = ({
-  name,
-  path,
-  type,
-  size,
-  handleDelete,
-}) => {
+export const File: React.FC<FileProps> = ({ item, handleDelete, show }) => {
+  const { name, path, type, size } = item;
   const [fileName, setFileName] = useState<RenameProps>({
     status: false,
     newName: null,
@@ -45,10 +43,11 @@ export const File: React.FC<FileProps> = ({
   };
 
   return (
-    <section className="file">
+    <section className="file" onClick={() => show(item)}>
       <div>
-        <p>name: {name}</p> <p>path: {path}</p> <p>suze: {size}</p>
-        <p>type: {type}</p>
+        <p>
+          name: {name} path: {path} size: {size} type: {type}
+        </p>
         <div>
           <button onClick={() => handleDelete(path)}>delete</button>
           <button onClick={() => changeName('status', null)}>rename</button>
