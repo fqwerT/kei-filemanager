@@ -24,8 +24,8 @@
 }
 
 .file div p {
-    max-width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: left;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
 }
